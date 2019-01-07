@@ -1,0 +1,11 @@
+version: '2'
+
+services:
+  workspace:
+    image: sisadmin-frontend
+    build: ./docker/
+    ports:
+      - 4200:4200
+    volumes:
+      - ./:/workspace
+    command: tail -f /dev/null
