@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {MenuContainer, MenuItem} from '../../models/menu-container.model';
+import {MenuContainer, MenuItem} from '../../../models/menu-container.model';
 
 @Component({
   selector: 'sisadmin-aside-menu-item',
