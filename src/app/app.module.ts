@@ -10,13 +10,27 @@ import { AsideMenuContainerComponent } from './ui/aside-menu-container/aside-men
 import { AsideMenuItemComponent } from './ui/aside-menu-item/aside-menu-item.component';
 import {RouterModule} from '@angular/router';
 import {CommonModule} from '@angular/common';
+import { DashboardComponent } from './ui/dashboard/dashboard.component';
+import { HeaderComponent } from './ui/header/header.component';
+import { NavbarHeaderComponent } from './ui/header/navbar-header/navbar-header.component';
+import { SearchHeaderComponent } from './ui/header/search-header/search-header.component';
+import { DropdownNotificationHeaderComponent } from './ui/header/dropdown-notification-header/dropdown-notification-header.component';
+import { DropdownMessageHeaderComponent } from './ui/header/dropdown-message-header/dropdown-message-header.component';
+import { DropdownUserHeaderComponent } from './ui/header/dropdown-user-header/dropdown-user-header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AsideMenuLeftComponent,
     AsideMenuContainerComponent,
-    AsideMenuItemComponent
+    AsideMenuItemComponent,
+    DashboardComponent,
+    HeaderComponent,
+    NavbarHeaderComponent,
+    SearchHeaderComponent,
+    DropdownNotificationHeaderComponent,
+    DropdownMessageHeaderComponent,
+    DropdownUserHeaderComponent
   ],
   imports: [
     CommonModule,

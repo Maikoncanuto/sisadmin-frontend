@@ -9,23 +9,18 @@ import {MenuContainer} from '../../models/menu-container.model';
 export class AsideMenuLeftComponent implements OnInit {
 
   menu: MenuContainer = {
-    home: 'Dashboard Totoso',
+    home: 'Dashboard',
     iconsClass: 'menu-icon fa fa-laptop',
     categories: [
       {
-        title: 'UI ELEMENTS BALACO BACO',
+        title: 'Cadastros',
         items: [
           {
-            title: 'Componentes 1',
-            iconsClass: 'menu-icon fa fa-cogs',
-            menuItemChildrens: [{
-              title: 'HEY I AM ALIVE',
-              iconsClass: 'fa fa-puzzle-piece',
-              routerLinkUrl: ''
-            }]
+            title: 'Usuário',
+            iconsClass: 'menu-icon fa fa-cogs'
           },
           {
-            title: 'Componentes 2',
+            title: 'Unidade',
             iconsClass: 'menu-icon fa fa-cogs',
             routerLinkUrl: 'algumacoisaqui'
           }
