@@ -46,9 +46,41 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/assets/css/lib/chosen/chosen.css",
+              "src/assets/css/lib/datatable/buttons.bootstrap.min.css",
+              "src/assets/css/lib/datatable/buttons.dataTables.min.css",
+              "src/assets/css/lib/datatable/dataTables.bootstrap.min.css",
+              "src/assets/css/lib/vector-map/jqvmap.min.css",
+              "src/assets/css/cs-skin-elastic.css",
+              "src/assets/css/style.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/js/lib/chosen/chosen.proto.js",
+              "src/assets/js/lib/data-table/buttons.bootstrap.min.js",
+              "src/assets/js/lib/data-table/buttons.colVis.min.js",
+              "src/assets/js/lib/data-table/buttons.flash.min.js",
+              "src/assets/js/lib/data-table/buttons.html5.min.js",
+              "src/assets/js/lib/data-table/buttons.print.min.js",
+              "src/assets/js/lib/data-table/dataTables.bootstrap.min.js",
+              "src/assets/js/lib/data-table/dataTables.buttons.min.js",
+              "src/assets/js/lib/data-table/datatables.min.js",
+              "src/assets/js/lib/data-table/jquery.dataTables.min.js",
+              "src/assets/js/lib/data-table/jszip.min.js",
+              "src/assets/js/lib/data-table/pdfmake.min.js",
+              "src/assets/js/lib/data-table/vfs_fonts.js",
+              "node_modules/@amcharts/amcharts4/core.js",
+              "node_modules/@amcharts/amcharts4/maps.js",
+              "node_modules/@amcharts/amcharts4/charts.js",
+              "node_modules/@amcharts/amcharts4/themes/amcharts.js",
+              "src/assets/js/dashboard.js",
+              "src/assets/js/main.js",
+              "src/assets/js/vmap.sampledata.js",
+              "src/assets/js/lib/gmap/gmapApi.js",
+              "src/assets/js/widgets.js",
+              "src/assets/js/lib/gmap/gmaps.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -154,5 +186,8 @@
       }
     }
   },
-  "defaultProject": "app-sisadmin"
+  "defaultProject": "app-sisadmin",
+  "cli": {
+    "defaultCollection": "@ngrx/schematics"
+  }
 }

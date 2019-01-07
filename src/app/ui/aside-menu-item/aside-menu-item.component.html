@@ -1,0 +1,25 @@
+<li [ngClass]="enableDropDownClass(item)" ngbDropdown *ngFor="let item of menuItems;index as i">
+
+  <a href="#"
+     class="dropdown-toggle"
+     [attr.id]="'dropdownBasic'+i"
+     aria-haspopup="true"
+     aria-expanded="false"
+     ngbDropdownToggle>
+    <i
+      [attr.class]="item.iconsClass"></i>{{item.title}}</a>
+
+  <!-- TODO descomentar quando as rodas estiverem ok, ok?-->
+  <!--<a href="#" class="dropdown-toggle" *ngIf="hasChildren(item)" [routerLink]="item.routerLinkUrl"-->
+  <!--[attr.id]="'dropdownBasic'+i" aria-haspopup="true" aria-expanded="false"-->
+  <!--ngbDropdownToggle>-->
+  <!--<i-->
+  <!--[attr.class]="item.iconsClass"></i>{{item.title}}</a>-->
+
+  <ul class="sub-menu children dropdown-menu" ngbDropdownMenu [attr.aria-labelledby]="'dropdownBasic'+i"
+      *ngFor="let children of item?.menuItemChildrens">
+    <!-- TODO descomentar quando as rodas estiverem ok, ok?-->
+    <!--<li><i [attr.class]="children.iconsClass"></i><a [routerLink]="children?.routerLinkUrl" routerLinkActive="'active'">{{children.title}}</a></li>-->
+    <li><i [attr.class]="children.iconsClass"></i><a href="#">{{children.title}}</a></li>
+  </ul>
+</li>
