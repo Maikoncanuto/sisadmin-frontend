@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {UserTableModel} from '../../models/users/user-table.model';
+import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import {ModalConfirmDeleteUserComponent} from './modal-confirm-delete-user/modal-confirm-delete-user.component';
 
 @Component({
   selector: 'sisadmin-users',
@@ -16,9 +18,22 @@ export class UsersComponent implements OnInit {
 
   public searchText: string;
 
-  constructor() { }
+  constructor(private _modalService: NgbModal) { }
 
   ngOnInit() {
   }
 
+  deleteUser(user: any) {
+    this.users = this.users.filter(function(userTmp) {return userTmp.name !== user.name; });
+  }
+
+  openModalDeleteUser(user: any) {
+    const modal = this._modalService.open(ModalConfirmDeleteUserComponent);
+    modal.result.then((result) => {
+      this.deleteUser(user);
+    }).catch((error) => {
+    });
+  }
 }
+
+

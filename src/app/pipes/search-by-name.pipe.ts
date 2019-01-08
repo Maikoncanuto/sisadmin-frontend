@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import {UserTableModel} from '../../../models/users/user-table.model';
+import {UserTableModel} from '../models/users/user-table.model';
 
 @Pipe({
   name: 'searchByName'

@@ -17,8 +17,9 @@ import {ROUTES} from './app.routes';
 import { AsideMenuComponent } from './ui/aside-menu/aside-menu.component';
 import {RouterModule} from '@angular/router';
 import { UsersComponent } from './ui/users/users.component';
-import { SearchByNamePipe } from './ui/users/pipes/search-by-name.pipe';
+import { SearchByNamePipe } from './pipes/search-by-name.pipe';
 import {FormsModule} from '@angular/forms';
+import { ModalConfirmDeleteUserComponent } from './ui/users/modal-confirm-delete-user/modal-confirm-delete-user.component';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import {FormsModule} from '@angular/forms';
     AsideMenuComponent,
     UsersComponent,
     SearchByNamePipe,
+    ModalConfirmDeleteUserComponent,
   ],
   imports: [
     CommonModule,
@@ -44,6 +46,9 @@ import {FormsModule} from '@angular/forms';
     StoreModule.forRoot(reducers, { metaReducers })
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+    ModalConfirmDeleteUserComponent,
+  ]
 })
 export class AppModule { }
