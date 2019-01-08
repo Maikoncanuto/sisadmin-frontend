@@ -11,8 +11,4 @@ export class ModalConfirmDeleteUserComponent implements OnInit {
 
   ngOnInit() {
   }
-
-  close() {
-    this.modal.close('OK - close');
-  }
 }

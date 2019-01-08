@@ -18,8 +18,9 @@ import { AsideMenuComponent } from './ui/aside-menu/aside-menu.component';
 import {RouterModule} from '@angular/router';
 import { UsersComponent } from './ui/users/users.component';
 import { SearchByNamePipe } from './pipes/search-by-name.pipe';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { ModalConfirmDeleteUserComponent } from './ui/users/modal-confirm-delete-user/modal-confirm-delete-user.component';
+import { ModalCreateUserComponent } from './ui/users/modal-create-user/modal-create-user.component';
 
 
 @NgModule({
@@ -36,11 +37,13 @@ import { ModalConfirmDeleteUserComponent } from './ui/users/modal-confirm-delete
     UsersComponent,
     SearchByNamePipe,
     ModalConfirmDeleteUserComponent,
+    ModalCreateUserComponent,
   ],
   imports: [
     CommonModule,
     FormsModule,
     BrowserModule,
+    ReactiveFormsModule,
     NgbModule.forRoot(),
     RouterModule.forRoot(ROUTES),
     StoreModule.forRoot(reducers, { metaReducers })
@@ -49,6 +52,7 @@ import { ModalConfirmDeleteUserComponent } from './ui/users/modal-confirm-delete
   bootstrap: [AppComponent],
   entryComponents: [
     ModalConfirmDeleteUserComponent,
+    ModalCreateUserComponent
   ]
 })
 export class AppModule { }

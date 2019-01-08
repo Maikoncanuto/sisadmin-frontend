@@ -1,6 +1,6 @@
 <div class="modal-header">
   <h4 class="modal-title" id="modal-title">Exclusão de usuário</h4>
-  <button type="button" class="close" aria-label="Close button" aria-describedby="modal-title" (click)="modal.dismiss('Cross click')">
+  <button type="button" class="close" aria-label="Close button" aria-describedby="modal-title" (click)="modal.dismiss()">
     <span aria-hidden="true">&times;</span>
   </button>
 </div>
@@ -11,6 +11,6 @@
   </p>
 </div>
 <div class="modal-footer">
-  <button type="button" class="btn btn-outline-secondary" (click)="modal.dismiss('cancel click')">Cancelar</button>
-  <button type="button" ngbAutofocus class="btn btn-danger" (click)="close()">Confirmar</button>
+  <button type="button" class="btn btn-outline-secondary" (click)="modal.dismiss()">Cancelar</button>
+  <button type="button" ngbAutofocus class="btn btn-danger" (click)="modal.close()">Confirmar</button>
 </div>
