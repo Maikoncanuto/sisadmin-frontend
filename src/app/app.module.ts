@@ -5,7 +5,7 @@ import {AppComponent} from './app.component';
 import {StoreModule} from '@ngrx/store';
 import {metaReducers, reducers} from './reducers';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import {CommonModule} from '@angular/common';
+import {APP_BASE_HREF, CommonModule} from '@angular/common';
 import {DashboardComponent} from './ui/dashboard/dashboard.component';
 import {HeaderComponent} from './ui/header/header.component';
 import {NavbarHeaderComponent} from './ui/header/navbar-header/navbar-header.component';
@@ -21,9 +21,17 @@ import {SearchByNamePipe} from './pipes/search-by-name.pipe';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {ModalConfirmDeleteUserComponent} from './ui/users/modal-confirm-delete-user/modal-confirm-delete-user.component';
 import {ModalCreateUserComponent} from './ui/users/modal-create-user/modal-create-user.component';
+import {ModalEditUserComponent} from './ui/users/modal-edit-user/modal-edit-user.component';
 import {AuthenticationModule} from './auth/auth.module';
 import {LoginComponent} from './ui/login/login.component';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
+import {RolesComponent} from './ui/roles/roles.component';
+import {ModalCreateRoleComponent} from './ui/roles/modal-create-role/modal-create-role.component';
+import {ModalEditRoleComponent} from './ui/roles/modal-edit-role/modal-edit-role.component';
+import {RolesService} from './services/roles.service';
+import {JwtInterceptor} from './auth/jwt.interceptor';
+import {ErrorInterceptor} from './auth/error.interceptor';
+import { ModalDetailRoleComponent } from './ui/roles/modal-detail-role/modal-detail-role.component';
 
 
 @NgModule({
@@ -41,7 +49,12 @@ import {HttpClientModule} from '@angular/common/http';
     SearchByNamePipe,
     ModalConfirmDeleteUserComponent,
     ModalCreateUserComponent,
-    LoginComponent
+    LoginComponent,
+    ModalEditUserComponent,
+    RolesComponent,
+    ModalCreateRoleComponent,
+    ModalEditRoleComponent,
+    ModalDetailRoleComponent,
   ],
   imports: [
     CommonModule,
@@ -54,11 +67,21 @@ import {HttpClientModule} from '@angular/common/http';
     RouterModule.forRoot(ROUTES),
     StoreModule.forRoot(reducers, {metaReducers})
   ],
-  providers: [],
+  providers: [
+    RolesService,
+    {provide: APP_BASE_HREF, useValue: '/'},
+    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true},
+    {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true}
+  ],
   bootstrap: [AppComponent],
   entryComponents: [
     ModalConfirmDeleteUserComponent,
-    ModalCreateUserComponent
+    ModalCreateUserComponent,
+    ModalEditUserComponent,
+    ModalCreateRoleComponent,
+    ModalEditRoleComponent,
+    ModalDetailRoleComponent
   ]
 })
-export class AppModule {}
+export class AppModule {
+}

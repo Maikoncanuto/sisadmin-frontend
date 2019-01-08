@@ -3,12 +3,14 @@ import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 import {FormBuilder, FormGroup} from '@angular/forms';
 
 @Component({
-  selector: 'sisadmin-modal-create-user',
-  templateUrl: './modal-create-user.component.html'
+  selector: 'sisadmin-modal-edit-user',
+  templateUrl: './modal-edit-user.component.html'
 })
-export class ModalCreateUserComponent implements OnInit {
+export class ModalEditUserComponent implements OnInit {
 
-  modalCreateForm: FormGroup;
+  @Input() user: any;
+
+  modalEditForm: FormGroup;
 
   constructor(public modal: NgbActiveModal,
               private formBuilder: FormBuilder) { }
@@ -18,13 +20,13 @@ export class ModalCreateUserComponent implements OnInit {
   }
 
   private createForm() {
-    this.modalCreateForm = this.formBuilder.group({
+    this.modalEditForm = this.formBuilder.group({
       name: '',
       profile: '',
       responsibility: ''
     });
   }
   private submitForm() {
-    this.modal.close(this.modalCreateForm.value);
+    this.modal.close(this.modalEditForm.value);
   }
 }
