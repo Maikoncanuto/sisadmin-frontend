@@ -25,7 +25,7 @@ export class RolesComponent implements OnInit {
   }
 
   openModalCreateRole(role: RoleModel): void {
-    const modal = this._modalService.open(ModalCreateRoleComponent, {centered: true});
+    const modal = this._modalService.open(ModalCreateRoleComponent, {centered: true, size: 'lg'});
     modal.result.then((result) => {
       this._rolesService
         .save({id: null, nome: result.nome, descricao: result.descricao, ativo: result.ativo})
@@ -35,7 +35,7 @@ export class RolesComponent implements OnInit {
   }
 
   openModalDetailRole(role: RoleModel): void {
-    const modal = this._modalService.open(ModalDetailRoleComponent, {centered: true});
+    const modal = this._modalService.open(ModalDetailRoleComponent, {centered: true, size: 'lg'});
     modal.componentInstance.role = role;
     modal.result.then((result) =>{
       console.log(result);
@@ -43,13 +43,14 @@ export class RolesComponent implements OnInit {
     });
   }
 
-  openModalEditUser(role: any): void {
-    const modal = this._modalService.open(ModalEditRoleComponent, {centered: true});
+  openModalEditUser(role: RoleModel): void {
+    const modal = this._modalService.open(ModalEditRoleComponent, {centered: true, size: 'lg'});
     modal.componentInstance.role = role;
     modal.result.then((result) => {
-      console.log(result);
+      this._rolesService
+        .update(role)
+        .subscribe(roles => this.roles = roles);
     }).catch((error) => {
-      console.log(error);
     });
   }
 

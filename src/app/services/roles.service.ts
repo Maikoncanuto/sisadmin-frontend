@@ -20,4 +20,8 @@ export class RolesService {
     return this._http.post<RoleModel[]>(`${environment.api}/roles`, role);
   }
 
+  update(role: RoleModel): Observable<RoleModel[]> {
+    return this._http.put<RoleModel[]>(`${environment.api}/roles`, role);
+  }
+
 }

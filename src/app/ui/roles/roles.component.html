@@ -60,7 +60,7 @@
               </tr>
               </thead>
               <tbody>
-              <tr *ngFor="let role of roles | searchByName: {nome: searchText, descricao: searchText}">
+              <tr *ngFor="let role of roles | searchByName: {nome: searchText, descricao: searchText, id: searchText, ativo: searchText}">
                 <td>{{role.id}}</td>
                 <td>{{role.nome}}</td>
                 <td>{{role.descricao}}</td>
