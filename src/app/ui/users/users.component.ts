@@ -7,8 +7,7 @@ import {ModalEditUserComponent} from './modal-edit-user/modal-edit-user.componen
 
 @Component({
   selector: 'sisadmin-users',
-  templateUrl: './users.component.html',
-  styleUrls: ['./users.component.css']
+  templateUrl: './users.component.html'
 })
 export class UsersComponent implements OnInit {
 

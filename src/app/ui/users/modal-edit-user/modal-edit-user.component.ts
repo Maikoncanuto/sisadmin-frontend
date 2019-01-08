@@ -4,8 +4,7 @@ import {FormBuilder, FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'sisadmin-modal-edit-user',
-  templateUrl: './modal-edit-user.component.html',
-  styleUrls: ['./modal-edit-user.component.css']
+  templateUrl: './modal-edit-user.component.html'
 })
 export class ModalEditUserComponent implements OnInit {
 
