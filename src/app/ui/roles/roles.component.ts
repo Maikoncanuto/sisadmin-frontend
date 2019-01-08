@@ -4,6 +4,7 @@ import {ModalCreateRoleComponent} from './modal-create-role/modal-create-role.co
 import {ModalEditRoleComponent} from './modal-edit-role/modal-edit-role.component';
 import {RoleModel} from '../../models/roles/role.model';
 import {RolesService} from '../../services/roles.service';
+import {ModalDetailRoleComponent} from './modal-detail-role/modal-detail-role.component';
 
 @Component({
   selector: 'sisadmin-roles',
@@ -18,16 +19,27 @@ export class RolesComponent implements OnInit {
   }
 
   ngOnInit() {
-    this._rolesService.findAll().subscribe(roles => this.roles = roles);
+    this._rolesService
+      .findAll()
+      .subscribe(roles => this.roles = roles);
   }
 
-  openModalCreateRole(role: any): void {
+  openModalCreateRole(role: RoleModel): void {
     const modal = this._modalService.open(ModalCreateRoleComponent, {centered: true});
     modal.result.then((result) => {
       this._rolesService
         .save({id: null, nome: result.nome, descricao: result.descricao, ativo: result.ativo})
         .subscribe(roles => this.roles = roles);
     }).catch((error) => {
+    });
+  }
+
+  openModalDetailRole(role: RoleModel): void {
+    const modal = this._modalService.open(ModalDetailRoleComponent, {centered: true});
+    modal.componentInstance.role = role;
+    modal.result.then((result) =>{
+      console.log(result);
+    }).catch((error)=>{
     });
   }
 

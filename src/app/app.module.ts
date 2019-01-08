@@ -25,13 +25,13 @@ import {ModalEditUserComponent} from './ui/users/modal-edit-user/modal-edit-user
 import {AuthenticationModule} from './auth/auth.module';
 import {LoginComponent} from './ui/login/login.component';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
-import { RolesComponent } from './ui/roles/roles.component';
-import { ModalConfirmDeleteRoleComponent } from './ui/roles/modal-confirm-delete-role/modal-confirm-delete-role.component';
-import { ModalCreateRoleComponent } from './ui/roles/modal-create-role/modal-create-role.component';
-import { ModalEditRoleComponent } from './ui/roles/modal-edit-role/modal-edit-role.component';
+import {RolesComponent} from './ui/roles/roles.component';
+import {ModalCreateRoleComponent} from './ui/roles/modal-create-role/modal-create-role.component';
+import {ModalEditRoleComponent} from './ui/roles/modal-edit-role/modal-edit-role.component';
 import {RolesService} from './services/roles.service';
 import {JwtInterceptor} from './auth/jwt.interceptor';
 import {ErrorInterceptor} from './auth/error.interceptor';
+import { ModalDetailRoleComponent } from './ui/roles/modal-detail-role/modal-detail-role.component';
 
 
 @NgModule({
@@ -52,9 +52,9 @@ import {ErrorInterceptor} from './auth/error.interceptor';
     LoginComponent,
     ModalEditUserComponent,
     RolesComponent,
-    ModalConfirmDeleteRoleComponent,
     ModalCreateRoleComponent,
     ModalEditRoleComponent,
+    ModalDetailRoleComponent,
   ],
   imports: [
     CommonModule,
@@ -78,9 +78,10 @@ import {ErrorInterceptor} from './auth/error.interceptor';
     ModalConfirmDeleteUserComponent,
     ModalCreateUserComponent,
     ModalEditUserComponent,
-    ModalConfirmDeleteRoleComponent,
     ModalCreateRoleComponent,
     ModalEditRoleComponent,
+    ModalDetailRoleComponent
   ]
 })
-export class AppModule {}
+export class AppModule {
+}
