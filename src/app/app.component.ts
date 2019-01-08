@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app-sisadmin';
+
+
+  public localStorage(item: string): any {
+    return localStorage.getItem(item);
+  }
+
 }
