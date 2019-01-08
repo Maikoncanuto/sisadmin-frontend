@@ -21,6 +21,7 @@ import { SearchByNamePipe } from './pipes/search-by-name.pipe';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { ModalConfirmDeleteUserComponent } from './ui/users/modal-confirm-delete-user/modal-confirm-delete-user.component';
 import { ModalCreateUserComponent } from './ui/users/modal-create-user/modal-create-user.component';
+import { ModalEditUserComponent } from './ui/users/modal-edit-user/modal-edit-user.component';
 
 
 @NgModule({
@@ -38,6 +39,7 @@ import { ModalCreateUserComponent } from './ui/users/modal-create-user/modal-cre
     SearchByNamePipe,
     ModalConfirmDeleteUserComponent,
     ModalCreateUserComponent,
+    ModalEditUserComponent,
   ],
   imports: [
     CommonModule,
@@ -52,7 +54,8 @@ import { ModalCreateUserComponent } from './ui/users/modal-create-user/modal-cre
   bootstrap: [AppComponent],
   entryComponents: [
     ModalConfirmDeleteUserComponent,
-    ModalCreateUserComponent
+    ModalCreateUserComponent,
+    ModalEditUserComponent
   ]
 })
 export class AppModule { }
