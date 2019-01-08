@@ -4,10 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
 import { reducers, metaReducers } from './reducers';
-import { AsideMenuLeftComponent } from './ui/aside-menu/aside-menu-left/aside-menu-left.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import { AsideMenuContainerComponent } from './ui/aside-menu/aside-menu-container/aside-menu-container.component';
-import { AsideMenuItemComponent } from './ui/aside-menu/aside-menu-item/aside-menu-item.component';
 import {CommonModule} from '@angular/common';
 import { DashboardComponent } from './ui/dashboard/dashboard.component';
 import { HeaderComponent } from './ui/header/header.component';
@@ -19,13 +16,14 @@ import { DropdownUserHeaderComponent } from './ui/header/dropdown-user-header/dr
 import {ROUTES} from './app.routes';
 import { AsideMenuComponent } from './ui/aside-menu/aside-menu.component';
 import {RouterModule} from '@angular/router';
+import { UsersComponent } from './ui/users/users.component';
+import { SearchByNamePipe } from './ui/users/pipes/search-by-name.pipe';
+import {FormsModule} from '@angular/forms';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    AsideMenuLeftComponent,
-    AsideMenuContainerComponent,
-    AsideMenuItemComponent,
     DashboardComponent,
     HeaderComponent,
     NavbarHeaderComponent,
@@ -33,10 +31,13 @@ import {RouterModule} from '@angular/router';
     DropdownNotificationHeaderComponent,
     DropdownMessageHeaderComponent,
     DropdownUserHeaderComponent,
-    AsideMenuComponent
+    AsideMenuComponent,
+    UsersComponent,
+    SearchByNamePipe,
   ],
   imports: [
     CommonModule,
+    FormsModule,
     BrowserModule,
     NgbModule.forRoot(),
     RouterModule.forRoot(ROUTES),
