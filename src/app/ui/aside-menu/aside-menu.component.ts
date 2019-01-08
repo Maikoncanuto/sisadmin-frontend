@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
+import {AuthenticationService} from '../../auth/authentication.service';
 
 @Component({
   selector: 'sisadmin-aside-menu',
@@ -10,5 +12,7 @@ export class AsideMenuComponent implements OnInit {
 
   ngOnInit() {
   }
+
+
 
 }
