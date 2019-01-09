@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
@@ -11,10 +11,19 @@ export class ModalCreateRoleComponent implements OnInit {
   modalCreateForm: FormGroup;
 
   constructor(public modal: NgbActiveModal,
-              private formBuilder: FormBuilder) { }
+              private formBuilder: FormBuilder) {
+  }
 
   ngOnInit() {
     this.createForm();
+  }
+
+  submitForm() {
+    if (this.modalCreateForm.invalid) {
+      return;
+    }
+
+    this.modal.close(this.modalCreateForm.value);
   }
 
   private createForm(): void {
@@ -22,14 +31,6 @@ export class ModalCreateRoleComponent implements OnInit {
       nome: ['', Validators.required],
       descricao: ['', Validators.required],
       ativo: true
-    })
+    });
   }
-
-  private submitForm(){
-    if(this.modalCreateForm.invalid)
-      return;
-
-    this.modal.close(this.modalCreateForm.value);
-  }
-
 }

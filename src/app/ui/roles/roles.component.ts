@@ -14,6 +14,8 @@ export class RolesComponent implements OnInit {
 
   roles: RoleModel[];
 
+  public searchText: string;
+
   constructor(private _modalService: NgbModal,
               private _rolesService: RolesService) {
   }
@@ -23,8 +25,7 @@ export class RolesComponent implements OnInit {
       .findAll()
       .subscribe(roles => this.roles = roles);
   }
-
-  openModalCreateRole(role: RoleModel): void {
+  openModalCreateRole(): void {
     const modal = this._modalService.open(ModalCreateRoleComponent, {centered: true, size: 'lg'});
     modal.result.then((result) => {
       this._rolesService
@@ -33,17 +34,16 @@ export class RolesComponent implements OnInit {
     }).catch((error) => {
     });
   }
-
   openModalDetailRole(role: RoleModel): void {
     const modal = this._modalService.open(ModalDetailRoleComponent, {centered: true, size: 'lg'});
     modal.componentInstance.role = role;
-    modal.result.then((result) =>{
+    modal.result.then((result) => {
       console.log(result);
-    }).catch((error)=>{
+    }).catch((error) => {
+      console.log(error);
     });
   }
-
-  openModalEditUser(role: RoleModel): void {
+  openModalEditUser(role: RoleModel) {
     const modal = this._modalService.open(ModalEditRoleComponent, {centered: true, size: 'lg'});
     modal.componentInstance.role = role;
     modal.result.then((result) => {
@@ -51,7 +51,7 @@ export class RolesComponent implements OnInit {
         .update(role)
         .subscribe(roles => this.roles = roles);
     }).catch((error) => {
+      console.log(error);
     });
   }
-
 }

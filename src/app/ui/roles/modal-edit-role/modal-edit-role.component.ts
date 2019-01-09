@@ -14,10 +14,23 @@ export class ModalEditRoleComponent implements OnInit {
   modalEditForm: FormGroup;
 
   constructor(public modal: NgbActiveModal,
-              private formBuilder: FormBuilder) { }
+              private formBuilder: FormBuilder) {
+  }
 
   ngOnInit() {
     this.createForm();
+  }
+
+  submitForm() {
+    if (this.modalEditForm.invalid) {
+      return;
+    }
+
+    this.role.nome = this.modalEditForm.controls.nome.value;
+    this.role.descricao = this.modalEditForm.controls.descricao.value;
+    this.role.ativo = this.modalEditForm.controls.ativo.value;
+
+    this.modal.close(this.role);
   }
 
   private createForm(): void {
@@ -25,17 +38,6 @@ export class ModalEditRoleComponent implements OnInit {
       nome: [this.role.nome, Validators.required],
       descricao: [this.role.descricao, Validators.required],
       ativo: this.role.ativo
-    })
-  }
-
-  private submitForm(){
-    if(this.modalEditForm.invalid)
-      return;
-
-    this.role.nome = this.modalEditForm.controls.nome.value;
-    this.role.descricao = this.modalEditForm.controls.descricao.value;
-    this.role.ativo = this.modalEditForm.controls.ativo.value;
-
-    this.modal.close(this.role);
+    });
   }
 }

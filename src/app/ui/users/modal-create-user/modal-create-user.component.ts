@@ -24,7 +24,7 @@ export class ModalCreateUserComponent implements OnInit {
       responsibility: ''
     });
   }
-  private submitForm() {
+  submitForm() {
     this.modal.close(this.modalCreateForm.value);
   }
 }

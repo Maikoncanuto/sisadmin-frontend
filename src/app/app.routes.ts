@@ -12,4 +12,4 @@ export const ROUTES: Routes = [
   {path: 'roles', component: RolesComponent, canActivate: [AuthGuard]},
   {path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   {path: '**', redirectTo: '/login' }
-]
+];
