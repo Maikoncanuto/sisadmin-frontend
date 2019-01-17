@@ -1,0 +1,146 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card ">
+          <div class="card-header card-header-info card-header-text">
+            <div class="card-text">
+              <h4 class="card-title">Visualizar unidade</h4>
+            </div>
+          </div>
+          <div class="card-body ">
+            <form [formGroup]="formGroup" class="form-horizontal">
+
+              <!-- Razao social -->
+              <div class="row">
+                <label class="col-sm-2 col-form-label">Razão social</label>
+                <div class="col-sm-10">
+                  <mat-form-field class="example-full-width">
+                    <input matInput type="text"
+                           matTooltip="Razão social da empresa" [matTooltipPosition]="'right'"
+                           disabled
+                           formControlName="razaoSocial">
+                  </mat-form-field>
+                </div>
+              </div>
+
+              <!-- Nome fantasia -->
+              <div class="row">
+                <label class="col-sm-2 col-form-label">Nome fantasia</label>
+                <div class="col-sm-10">
+                  <mat-form-field class="example-full-width">
+                    <input matInput type="text"
+                           matTooltip="Nome fantasia da empresa" [matTooltipPosition]="'right'"
+                           disabled
+                           formControlName="nomeFantasia">
+                  </mat-form-field>
+                </div>
+              </div>
+
+              <!-- CNPJ -->
+              <div class="row">
+                <label class="col-sm-2 col-form-label">Cnpj</label>
+                <div class="col-sm-10">
+                  <mat-form-field class="example-full-width">
+                    <input matInput type="text"
+                           matTooltip="CNPJ da empresa" [matTooltipPosition]="'right'"
+                           disabled
+                           formControlName="cnpj">
+                  </mat-form-field>
+                </div>
+              </div>
+
+              <!-- Email -->
+              <div class="row">
+                <label class="col-sm-2 col-form-label">Email</label>
+                <div class="col-sm-10">
+                  <mat-form-field class="example-full-width">
+                    <input matInput type="email"
+                           matTooltip="E-mail principal da empresa/unidade" [matTooltipPosition]="'right'"
+                           disabled
+                           formControlName="email">
+                  </mat-form-field>
+                </div>
+              </div>
+
+              <!-- Telefone -->
+              <div class="row">
+                <label class="col-sm-2 col-form-label">Telefone</label>
+                <div class="col-sm-10">
+                  <mat-form-field class="example-full-width">
+                    <input matInput type="phone"
+                           matTooltip="Telefone principal da empresa/unidade" [matTooltipPosition]="'right'"
+                           disabled
+                           formControlName="telefone">
+                  </mat-form-field>
+                </div>
+              </div>
+
+              <!-- Nome do responsável -->
+              <div class="row">
+                <label class="col-sm-2 col-form-label">Nome do responsável</label>
+                <div class="col-sm-10">
+                  <mat-form-field class="example-full-width">
+                    <input matInput type="text"
+                           matTooltip="Nome da responsável da empresa" [matTooltipPosition]="'right'"
+                           disabled
+                           formControlName="nomeResponsavel">
+                  </mat-form-field>
+                </div>
+              </div>
+
+              <!-- Endereço -->
+              <div class="row">
+                <label class="col-sm-2 col-form-label">Endereço</label>
+                <div class="col-sm-10">
+                  <div class="row">
+                    <div class="col-md-2">
+                      <mat-form-field class="example-full-width">
+                        <input matInput type="text"
+                               matTooltip="CEP da endereço da unidade" [matTooltipPosition]="'below'"
+                               disabled
+                               formControlName="cep">
+                      </mat-form-field>
+                    </div>
+
+                    <div class="col-md-2">
+                      <mat-form-field class="example-full-width">
+                        <input matInput type="text"
+                               matTooltip="UF da endereço da unidade" [matTooltipPosition]="'below'"
+                               disabled
+                               formControlName="uf">
+                      </mat-form-field>
+                    </div>
+
+                    <div class="col-md-3">
+                      <mat-form-field class="example-full-width">
+                        <input matInput type="text"
+                               matTooltip="Cidade do endereço da unidade" [matTooltipPosition]="'below'"
+                               formControlName="cidade">
+                      </mat-form-field>
+                    </div>
+                    <div class="col-md-5">
+                      <mat-form-field class="example-full-width">
+                        <input matInput type="text"
+                               matTooltip="Logradouro do endereço da unidade" [matTooltipPosition]="'below'"
+                               formControlName="logradouro">
+                      </mat-form-field>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card-footer ">
+                <div class="btn-group ml-auto">
+                  <button mat-raised-button class="btn btn-fill btn-info"
+                          matTooltip="Voltar para listagem de unidades" [matTooltipPosition]="'above'"
+                          (click)="cancelar()">Voltar</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

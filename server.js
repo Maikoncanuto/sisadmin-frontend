@@ -6,11 +6,11 @@ const app = express ();
 
 // Serve apenas os arquivos estáticos que formam o diretório dist
 console.log('Passo 1 - express.static: /dist/');
-app.use (express.static (__dirname + '/dist/app-sisadmin'));
+app.use (express.static (__dirname + '/dist/demo'));
 
 console.log('Passo 1 - app.get: /*');
 app.get ('/*', function (req, res) {
-  res.sendFile (path.join (__dirname + '/dist/app-sisadmin/index.html'));
+    res.sendFile (path.join (__dirname + '/dist/demo/index.html'));
 });
 
 // Inicie o aplicativo ouvindo na porta padrão do Heroku

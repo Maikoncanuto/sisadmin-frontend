@@ -1,16 +1,26 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router, NavigationEnd, NavigationStart } from '@angular/router';
+import { Subscription } from 'rxjs/Subscription';
 
 @Component({
-  selector: 'sisadmin-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+    selector: 'app-my-app',
+    templateUrl: './app.component.html'
 })
-export class AppComponent {
-  title = 'app-sisadmin';
 
+export class AppComponent implements OnInit {
+  private _router: Subscription;
 
-  public localStorage(item: string): any {
-    return localStorage.getItem(item);
+  constructor( private router: Router ) {
   }
 
+    ngOnInit() {
+      this._router = this.router.events.filter(event => event instanceof NavigationEnd).subscribe((event: NavigationEnd) => {
+        const body = document.getElementsByTagName('body')[0];
+        const modalBackdrop = document.getElementsByClassName('modal-backdrop')[0];
+        if (body.classList.contains('modal-open')) {
+          body.classList.remove('modal-open');
+          modalBackdrop.remove();
+        }
+      });
+    }
 }

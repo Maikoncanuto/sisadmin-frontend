@@ -1,9 +1,2 @@
 
-<div  *ngIf="localStorage('currentUser') !== null">
-  <sisadmin-aside-menu></sisadmin-aside-menu>
-</div>
-
-<div id="right-panel" class="right-panel">
-  <sisadmin-header *ngIf="localStorage('currentUser') !== null"></sisadmin-header >
-  <router-outlet></router-outlet>
-</div>
+<router-outlet></router-outlet>
