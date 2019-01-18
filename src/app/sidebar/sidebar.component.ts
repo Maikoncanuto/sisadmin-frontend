@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import PerfectScrollbar from 'perfect-scrollbar';
 
 declare const $: any;
@@ -22,29 +22,47 @@ export interface ChildrenItems {
 
 //Menu Items
 export const ROUTES: RouteInfo[] = [{
-        path: '/dashboard',
-        title: 'Dashboard',
-        type: 'link',
-        icontype: 'dashboard'
-    },{
-        path: '/unidades',
-        title: 'Unidades',
-        type: 'sub',
-        icontype: 'domain',
-        collapse: 'unidades',
-        children: [
-            {path: 'listagem', title: 'Listagem de unidades', ab:'UNI'}
-        ]
-    },{
-        path: '/usuarios',
-        title: 'Usuários',
-        type: 'sub',
-        icontype: 'group',
-        collapse: 'usuarios',
-        children: [
-            {path: 'listagem', title: 'Listagem de usuários', ab:'USR'}
-        ]
-    }];
+    path: '/dashboard',
+    title: 'Dashboard',
+    type: 'link',
+    icontype: 'dashboard'
+}, {
+    path: '/unidades',
+    title: 'Unidades',
+    type: 'sub',
+    icontype: 'domain',
+    collapse: 'unidades',
+    children: [
+        {path: 'listagem', title: 'Administração de unidades', ab: 'UNI'}
+    ]
+}, {
+    path: '/usuarios',
+    title: 'Usuários',
+    type: 'sub',
+    icontype: 'group',
+    collapse: 'usuarios',
+    children: [
+        {path: 'listagem', title: 'Administração de usuários', ab: 'USR'}
+    ]
+}, {
+    path: '/perfis',
+    title: 'Perfis',
+    type: 'sub',
+    icontype: 'account_box',
+    collapse: 'perfis',
+    children: [
+        {path: 'listagem', title: 'Adminsitração de perfis', ab: 'PER'}
+    ]
+}, {
+    path: '/cursos',
+    title: 'Cursos',
+    type: 'sub',
+    icontype: 'chrome_reader_mode',
+    collapse: 'cursos',
+    children: [
+        {path: 'listagem', title: 'Administração de cursos', ab: 'CRS'}
+    ]
+}];
 //     ,{
 //         path: '/components',
 //         title: 'Components',
@@ -145,12 +163,15 @@ export class SidebarComponent implements OnInit {
     ngOnInit() {
         this.menuItems = ROUTES.filter(menuItem => menuItem);
     }
-    updatePS(): void  {
+
+    updatePS(): void {
         if (window.matchMedia(`(min-width: 960px)`).matches && !this.isMac()) {
             const elemSidebar = <HTMLElement>document.querySelector('.sidebar .sidebar-wrapper');
-            let ps = new PerfectScrollbar(elemSidebar, { wheelSpeed: 2, suppressScrollX: true });
+            let ps = new PerfectScrollbar(elemSidebar, {wheelSpeed: 2, suppressScrollX: true});
         }
     }
+
+
     isMac(): boolean {
         let bool = false;
         if (navigator.platform.toUpperCase().indexOf('MAC') >= 0 || navigator.platform.toUpperCase().indexOf('IPAD') >= 0) {

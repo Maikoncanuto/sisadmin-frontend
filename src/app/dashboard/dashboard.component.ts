@@ -31,6 +31,22 @@ export class DashboardComponent implements OnInit, AfterViewInit {
         this._router.navigate(['/usuarios/listagem']);
     }
 
+    listagemPerfil(): void {
+        this._router.navigate(['/perfis/listagem']);
+    }
+
+    cadastroPerfil(): void {
+        this._router.navigate(['/perfis/cadastro']);
+    }
+
+    listagemCursos(): void {
+        this._router.navigate(['/cursos/listagem']);
+    }
+
+    cadastroCursos(): void {
+        this._router.navigate(['/cursos/cadastro']);
+    }
+
   public tableData: TableData;
   startAnimationForLineChart(chart: any) {
       let seq: any, delays: any, durations: any;

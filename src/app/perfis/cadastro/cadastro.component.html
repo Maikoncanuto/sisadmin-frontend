@@ -1,0 +1,52 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card ">
+          <div class="card-header card-header-info card-header-text">
+            <div class="card-text">
+              <h4 class="card-title">Cadastro perfil</h4>
+            </div>
+          </div>
+          <div class="card-body ">
+            <form [formGroup]="formGroup" (ngSubmit)="ngSubmit()" class="form-horizontal">
+
+              <!-- Nome Perfil -->
+              <div class="row">
+                <label class="col-sm-2 col-form-label">Nome do perfil</label>
+                <div class="col-sm-10">
+                  <mat-form-field class="example-full-width">
+                    <input matInput type="text"
+                           matTooltip="Nome do perfil" [matTooltipPosition]="'right'"
+                           placeholder="ROLE_ADMIN"
+                           formControlName="nomePerfil">
+                  </mat-form-field>
+                </div>
+              </div>
+
+              <!-- Descrição do perifl -->
+              <div class="row">
+                <label class="col-sm-2 col-form-label">Descrição</label>
+                <div class="col-sm-10">
+                  <mat-form-field class="example-full-width">
+                    <input matInput type="text"
+                           matTooltip="Descrição do perfil" [matTooltipPosition]="'right'"
+                           placeholder="Administrador do sistema"
+                           formControlName="descricao">
+                  </mat-form-field>
+                </div>
+              </div>
+
+              <div class="card-footer ">
+                <div class="btn-group ml-auto">
+                  <button mat-raised-button class="btn btn-fill btn-danger" matTooltip="Cancelar cadastro" [matTooltipPosition]="'above'" (click)="cancelar()">Cancelar</button>
+                  <button mat-raised-button type="submit" class="btn btn-fill btn-success" matTooltip="Salvar informações" [matTooltipPosition]="'above'" [disabled]="!formGroup.valid" (click)="salvar()">Salvar</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
