@@ -1,36 +1,36 @@
 import {Routes} from "@angular/router";
-import {CadastroComponent} from "./cadastro/cadastro.component";
-import {ListagemComponent} from "./listagem/listagem.component";
-import {EditarComponent} from "./editar/editar.component";
-import {VisualizarComponent} from "./visualizar/visualizar.component";
+import {CriarUsuarioComponent} from "./criar-usuario/criar-usuario.component";
+import {ListarUsuarioComponent} from "./listar-usuario/listar-usuario.component";
+import {EditarUsuarioComponent} from "./editar-usuario/editar-usuario.component";
+import {DetalharUsuarioComponent} from "./detalhar-usuario/detalhar-usuario.component";
 
 export const UsuariosRoutes: Routes = [
     {
         path: '',
         children: [{
-            path: 'cadastro',
-            component: CadastroComponent
+            path: 'criar-usuario',
+            component: CriarUsuarioComponent
         }]
     },
     {
         path: '',
         children: [{
-            path: 'listagem',
-            component: ListagemComponent
+            path: 'listar-usuario',
+            component: ListarUsuarioComponent
         }]
     },
     {
         path: '',
         children: [{
-            path: 'editar',
-            component: EditarComponent
+            path: 'editar-usuario',
+            component: EditarUsuarioComponent
         }]
     },
     {
         path: '',
         children: [{
-            path: 'visualizar',
-            component: VisualizarComponent
+            path: 'detalhar-usuario',
+            component: DetalharUsuarioComponent
         }]
     }
 ];

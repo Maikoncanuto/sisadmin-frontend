@@ -1,0 +1,103 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card ">
+          <div class="card-header  card-header-text">
+            <div class="card-text card-header-app-radio-red">
+              <h4 class="card-title">Detalhar curso</h4>
+            </div>
+          </div>
+          <div class="card-body ">
+            <div class="form-horizontal">
+
+              <div class="row">
+                <label class="col-sm-2 col-form-label">Curso</label>
+                <div class="col-sm-10">
+                  <mat-form-field class="col-md-6">
+                    <input matInput type="text"
+                           matTooltip="Nome Curso" [matTooltipPosition]="'right'" placeholder="Insira o nome do curso"
+                           disabled>
+                  </mat-form-field>
+                </div>
+
+              </div>
+
+              <div class="row">
+                <label class="col-sm-2 col-form-label">Disponível</label>
+                <div class="col-lg-5 col-md-4 col-sm-4">
+                  <mat-form-field>
+                    <mat-select disabled placeholder="" name="disponivel" formControlName="disponibilidade">
+                      <!--<mat-option *ngFor="let disponibilidade of opcoesDisponibilidade" [value]="disponibilidade.value">-->
+                        <!--{{ disponibilidade.viewValue }}-->
+                      <!--</mat-option>-->
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+              </div>
+
+              <div class="row">
+                <label class="col-sm-2 col-form-label">Categoria</label>
+                <div class="col-lg-5 col-md-4 col-sm-4">
+                  <mat-form-field>
+                    <mat-select disabled placeholder="" name="disponivel" formControlName="categoriaCurso">
+                      <!--<mat-option *ngFor="let categoria of categoriasCurso" [value]="categoria.value">-->
+                        <!--{{ categoria.viewValue }}-->
+                      <!--</mat-option>-->
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+              </div>
+
+              <div class="row">
+                <label class="col-sm-2 col-form-label">Carga Horárias </label>
+                <div class="col-md-3">
+                  <mat-form-field class="example-full-width">
+                    <input matInput type="text" placeholder="Carga Horária Teórico" disabled>
+                  </mat-form-field>
+                </div>
+                <div class="col-md-3">
+                  <mat-form-field class="example-full-width">
+                    <input matInput type="text" placeholder="Carga Horária Prático" disabled>
+                  </mat-form-field>
+                </div>
+                <div class="col-md-3">
+                  <mat-form-field class="example-full-width">
+                    <input matInput type="text" placeholder="Carga Horária Estágio" disabled>
+                  </mat-form-field>
+                </div>
+              </div>
+
+              <div class="row">
+                <label class="col-sm-2 col-form-label">Valores do Curso</label>
+                <div class="col-md-3">
+                  <mat-form-field class="example-full-width">
+                    <input matInput type="text" placeholder="Valor Curso" disabled>
+                  </mat-form-field>
+                </div>
+                <div class="col-md-3">
+                  <mat-form-field class="example-full-width">
+                    <input matInput type="text" placeholder="Valor Matrícula" disabled>
+                  </mat-form-field>
+                </div>
+                <div class="col-md-3">
+                  <mat-form-field class="example-full-width">
+                    <input matInput type="text" placeholder="Valor Teste" disabled>
+                  </mat-form-field>
+                </div>
+              </div>
+
+              <div class="card-footer ">
+                <div class="btn-group ml-auto">
+                  <button mat-raised-button class="btn btn-fill btn-app-radio-red"
+                          matTooltip="Voltar para administração de cursos" [matTooltipPosition]="'above'"
+                          (click)="cancelar()">Voltar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

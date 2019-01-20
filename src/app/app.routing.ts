@@ -24,6 +24,9 @@ export const AppRoutes: Routes = [
             }, {
                 path: 'usuarios',
                 loadChildren: './usuarios/usuarios.module#UsuariosModule'
+            }, {
+                path: 'atendimentos',
+                loadChildren: './atendimento/atendimento.module#AtendimentoModule'
             },
             {
                 path: 'perfis',

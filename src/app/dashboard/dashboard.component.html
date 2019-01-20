@@ -111,7 +111,30 @@
       <div class="row">
         <div class="col-lg-3 col-md-6 col-sm-6">
           <div class="card card-stats">
-            <div (click)="listagemUnidade()" class="card-header card-header-warning card-header-icon">
+            <div matTooltip="Ir para administração de atendimentos"
+                 [matTooltipPosition]="'above'" (click)="listagemAtendimento()"
+                 class="card-header card-header-info card-header-icon">
+              <div class="card-icon" >
+                <i class="material-icons">perm_identity</i>
+              </div>
+              <p class="card-category">Atendimentos</p>
+              <h3 class="card-title">45</h3>
+            </div>
+            <div class="card-footer">
+              <div class="stats" matTooltip="Ir para cadastro de atendimentos" [matTooltipPosition]="'above'">
+                <a (click)="cadastroAtendimento()">Cadastrar</a>
+              </div>
+
+                <div class="stats" matTooltip="Ir para relatórios de atendimentos" [matTooltipPosition]="'above'">
+                  <a (click)="relatoriosAtendimento()">Relatórios</a>
+                </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-sm-6">
+          <div class="card card-stats">
+            <div matTooltip="Ir para administração de unidades" [matTooltipPosition]="'above'" (click)="listagemUnidade()" class="card-header card-header-warning card-header-icon">
               <div class="card-icon" >
                 <i class="material-icons">domain</i>
               </div>
@@ -119,7 +142,7 @@
               <h3 class="card-title">15</h3>
             </div>
             <div class="card-footer">
-              <div class="stats">
+              <div class="stats" matTooltip="Ir para cadastro de unidades" [matTooltipPosition]="'above'">
                 <a (click)="cadastrarUnidade()">Cadastrar</a>
               </div>
             </div>
@@ -128,7 +151,7 @@
 
         <div class="col-lg-3 col-md-6 col-sm-6">
           <div class="card card-stats">
-            <div (click)="listagemUsuario()" class="card-header card-header-success card-header-icon">
+            <div matTooltip="Ir para administração de usuários" [matTooltipPosition]="'above'" (click)="listagemUsuario()" class="card-header card-header-success card-header-icon">
               <div class="card-icon">
                 <i class="material-icons">group</i>
               </div>
@@ -136,7 +159,7 @@
               <h3 class="card-title">1.344</h3>
             </div>
             <div class="card-footer">
-              <div class="stats">
+              <div class="stats" matTooltip="Ir para cadastro de usuários" [matTooltipPosition]="'above'">
                 <a (click)="cadastrarUsuario()">Cadastrar</a>
               </div>
             </div>
@@ -145,7 +168,7 @@
 
         <div class="col-lg-3 col-md-6 col-sm-6">
           <div class="card card-stats">
-            <div (click)="listagemPerfil()" class="card-header card-header-info card-header-icon">
+            <div matTooltip="Ir para administração de perfis" [matTooltipPosition]="'above'" (click)="listagemPerfil()" class="card-header card-header-info card-header-icon">
               <div class="card-icon" >
                 <i class="material-icons">account_box</i>
               </div>
@@ -153,8 +176,8 @@
               <h3 class="card-title">40</h3>
             </div>
             <div class="card-footer">
-              <div class="stats">
-                <a (click)="cadastrarUnidade()">Cadastrar</a>
+              <div class="stats" matTooltip="Ir para cadastro de perfil" [matTooltipPosition]="'above'">
+                <a (click)="cadastroPerfil()">Cadastrar</a>
               </div>
             </div>
           </div>
@@ -162,7 +185,7 @@
 
         <div class="col-lg-3 col-md-6 col-sm-6">
           <div class="card card-stats">
-            <div (click)="listagemCursos()" class="card-header card-header-rose card-header-icon">
+            <div matTooltip="Ir para administração de cursos" [matTooltipPosition]="'above'" (click)="listagemPerfil()" (click)="listagemCursos()" class="card-header card-header-rose card-header-icon">
               <div class="card-icon" >
                 <i class="material-icons">chrome_reader_mode</i>
               </div>
@@ -170,8 +193,11 @@
               <h3 class="card-title">20</h3>
             </div>
             <div class="card-footer">
-              <div class="stats">
-                <a (click)="cadastrarUnidade()">Cadastrar</a>
+              <div class="stats" matTooltip="Ir para cadastro de curso" [matTooltipPosition]="'above'">
+                <a (click)="cadastroCursos()">Cadastrar</a>
+              </div>
+              <div class="stats" matTooltip="Ir para agendamento de aulas" [matTooltipPosition]="'above'">
+                <a (click)="agendarAula()">Agendar aula</a>
               </div>
             </div>
           </div>

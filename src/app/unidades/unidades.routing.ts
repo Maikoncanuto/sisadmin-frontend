@@ -1,36 +1,36 @@
 import {Routes} from "@angular/router";
-import {CadastroComponent} from "./cadastro/cadastro.component";
-import {ListagemComponent} from "./listagem/listagem.component";
-import {EditarComponent} from "./editar/editar.component";
-import {VisualizarComponent} from "./visualizar/visualizar.component";
+import {CriarUnidadeComponent} from "./criar-unidade/criar-unidade.component";
+import {ListarUnidadeComponent} from "./listar-unidade/listar-unidade.component";
+import {EditarUnidadeComponent} from "./editar-unidade/editar-unidade.component";
+import {DetalharUnidadeComponent} from "./detalhar-unidade/detalhar-unidade.component";
 
 export const UnidadesRoutes: Routes = [
     {
         path: '',
         children: [{
-            path: 'cadastro',
-            component: CadastroComponent
+            path: 'criar-unidade',
+            component: CriarUnidadeComponent
         }]
     },
     {
         path: '',
         children: [{
-            path: 'listagem', //listagem
-            component: ListagemComponent
+            path: 'listar-unidade',
+            component: ListarUnidadeComponent
         }]
     },
     {
         path: '',
         children: [{
-            path: 'editar', //listagem
-            component: EditarComponent
+            path: 'editar-unidade',
+            component: EditarUnidadeComponent
         }]
     },
     {
         path: '',
         children: [{
-            path: 'visualizar', //listagem
-            component: VisualizarComponent
+            path: 'detalhar-unidade',
+            component: DetalharUnidadeComponent
         }]
     }
 ];

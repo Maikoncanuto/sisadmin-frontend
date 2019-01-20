@@ -242,3 +242,20 @@
 .btn-no-ripple .mat-button-ripple{
   display: none;
 }
+
+.btn-app-radio-red{
+  background-color: #B04632 !important;
+  border-color: #B04632 !important;
+
+  &:hover{
+    background-color: #B04632 !important;
+    border-color: #B04632 !important;
+  }
+}
+
+.paginate_button > li{
+  &.active{
+    background-color: #B04632 !important;
+    border-color: #B04632 !important;
+  }
+}

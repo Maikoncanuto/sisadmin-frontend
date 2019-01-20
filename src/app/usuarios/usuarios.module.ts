@@ -1,9 +1,9 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {CadastroComponent} from './cadastro/cadastro.component';
-import {VisualizarComponent} from './visualizar/visualizar.component';
-import {ListagemComponent} from './listagem/listagem.component';
-import {EditarComponent} from './editar/editar.component';
+import {CriarUsuarioComponent} from './criar-usuario/criar-usuario.component';
+import {DetalharUsuarioComponent} from './detalhar-usuario/detalhar-usuario.component';
+import {ListarUsuarioComponent} from './listar-usuario/listar-usuario.component';
+import {EditarUsuarioComponent} from './editar-usuario/editar-usuario.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MaterialModule} from "../app.module";
 import {TagInputModule} from "ngx-chips";
@@ -12,7 +12,7 @@ import {RouterModule} from "@angular/router";
 import {UsuariosRoutes} from "./usuarios.routing";
 
 @NgModule({
-  declarations: [CadastroComponent, VisualizarComponent, ListagemComponent, EditarComponent],
+  declarations: [CriarUsuarioComponent, DetalharUsuarioComponent, ListarUsuarioComponent, EditarUsuarioComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,

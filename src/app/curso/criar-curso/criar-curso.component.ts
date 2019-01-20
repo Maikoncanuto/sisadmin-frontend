@@ -34,10 +34,10 @@ export class CriarCursoComponent implements OnInit {
   ];
 
   cancelar(): void {
-    this._router.navigate(['/cursos/listagem']);
+    this._router.navigate(['/cursos/listar-curso']);
   }
 
   salvar(): void {
-    this._router.navigate(['/cursos/listagem']);
+    this._router.navigate(['/cursos/listar-curso']);
   }
 }

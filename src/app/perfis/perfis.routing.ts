@@ -1,36 +1,36 @@
 import {Routes} from "@angular/router";
-import {CadastroComponent} from "./cadastro/cadastro.component";
-import {ListagemComponent} from "./listagem/listagem.component";
-import {EditarComponent} from "./editar/editar.component";
-import {VisualizarComponent} from "./visualizar/visualizar.component";
+import {CriarPerfilComponent} from "./criar-perfil/criar-perfil.component";
+import {ListarPerfilComponent} from "./listar-perfil/listar-perfil.component";
+import {EditarPerfilComponent} from "./editar-perfil/editar-perfil.component";
+import {DetalharPerfilComponent} from "./detalhar-perfil/detalhar-perfil.component";
 
 export const PerfisRoutes: Routes = [
     {
         path: '',
         children: [{
-            path: 'cadastro',
-            component: CadastroComponent
+            path: 'criar-perfil',
+            component: CriarPerfilComponent
         }]
     },
     {
         path: '',
         children: [{
-            path: 'listagem',
-            component: ListagemComponent
+            path: 'listar-perfil',
+            component: ListarPerfilComponent
         }]
     },
     {
         path: '',
         children: [{
-            path: 'editar',
-            component: EditarComponent
+            path: 'editar-perfil',
+            component: EditarPerfilComponent
         }]
     },
     {
         path: '',
         children: [{
-            path: 'visualizar',
-            component: VisualizarComponent
+            path: 'detalhar-perfil',
+            component: DetalharPerfilComponent
         }]
     }
 ];

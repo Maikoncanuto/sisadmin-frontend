@@ -1,0 +1,168 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card ">
+          <div class="card-header card-header-text">
+            <div class="card-text  card-header-app-radio-red">
+              <h4 class="card-title">Editar atendimento</h4>
+            </div>
+          </div>
+          <div class="card-body ">
+            <form [formGroup]="formGroup" (ngSubmit)="ngSubmit()" class="form-horizontal">
+
+              <div class="row">
+                <label class="col-sm-2 col-form-label">Tipo Atendimento</label>
+                <div class="col-lg-5 col-md-4 col-sm-4">
+                  <mat-form-field>
+                    <mat-select placeholder="Selecione" name="tipoAtendimento" formControlName="tipoAtendimento">
+                      <mat-option *ngFor="let tipoAtendimento of tiposAtendimento" [value]="tipoAtendimento.value">
+                        {{ tipoAtendimento.viewValue }}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+              </div>
+
+              <div class="row">
+                <label class="col-sm-2 col-form-label">Empresa</label>
+                <div class="col-lg-5 col-md-4 col-sm-4">
+                  <mat-form-field>
+                    <mat-select placeholder="Selecione" name="unidade" formControlName="unidade">
+                      <mat-option *ngFor="let unidade of unidadesFake" [value]="unidade.value">
+                        {{ unidade.viewValue }}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+              </div>
+
+
+              <div class="row">
+                <label class="col-sm-2 col-form-label">Nome Cliente</label>
+                <div class="col-sm-10">
+                  <mat-form-field class="example-full-width">
+                    <input matInput type="text" matTooltip="Nome Cliente" [matTooltipPosition]="'right'" placeholder="Insira o nome do Cliente"
+                           formControlName="nomeCliente">
+                  </mat-form-field>
+                </div>
+              </div>
+
+              <div class="row">
+                <label class="col-sm-2 col-form-label">Telefone</label>
+                <div class="col-sm-10">
+                  <mat-form-field class="example-full-width">
+                    <input matInput type="phone" matTooltip="Telefone Cliente " [matTooltipPosition]="'right'"
+                           placeholder="Insira o telefone" formControlName="telefone">
+                  </mat-form-field>
+                </div>
+              </div>
+
+              <div class="row">
+                <label class="col-sm-2 col-form-label">Email</label>
+                <div class="col-sm-10">
+                  <mat-form-field class="example-full-width">
+                    <input matInput type="email" matTooltip="E-mail do cliente" [matTooltipPosition]="'right'"
+                           placeholder="exemplo@exemplo.com.br" formControlName="email">
+                  </mat-form-field>
+                </div>
+              </div>
+
+
+              <div class="row">
+                <label class="col-sm-2 col-form-label">Endereço</label>
+                <div class="col-sm-10">
+                  <div class="row">
+
+
+
+                    <div class="col-md-3">
+                      <mat-form-field class="example-full-width">
+                        <input matInput type="text" placeholder="Cidade" matTooltip="Cidade do endereço da unidade"
+                               [matTooltipPosition]="'below'" formControlName="cidade">
+                      </mat-form-field>
+                    </div>
+
+
+                    <div class="col-md-2">
+                      <mat-form-field class="example-full-width">
+                        <input matInput type="text" matTooltip="UF da endereço da unidade" [matTooltipPosition]="'below'"
+                               placeholder="UF" formControlName="uf">
+                      </mat-form-field>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <label class="col-sm-2 col-form-label">Como Descobriu</label>
+                <div class="col-sm-10">
+                  <mat-form-field class="example-full-width">
+                    <input matInput type="text" matTooltip="Como descobriu?" [matTooltipPosition]="'right'"
+                           placeholder="Como descobriu?" formControlName="comoDescobriu">
+                  </mat-form-field>
+                </div>
+              </div>
+
+              <div class="row">
+                <label class="col-sm-2 col-form-label">Andamento</label>
+                <div class="col-lg-5 col-md-4 col-sm-4">
+                  <mat-form-field>
+                    <mat-select placeholder="Selecione" name="andamento" formControlName="andamento">
+                      <mat-option *ngFor="let andamento of andamentos" [value]="andamento.value">
+                        {{ andamento.viewValue }}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+              </div>
+
+              <div class="row">
+                <label class="col-sm-2 col-form-label">Propriedade</label>
+                <div class="col-lg-5 col-md-4 col-sm-4">
+                  <mat-form-field>
+                    <mat-select placeholder="Selecione" name="propriedade" formControlName="propriedade">
+                      <mat-option *ngFor="let propriedade of prioridades" [value]="propriedade.value">
+                        {{ propriedade.viewValue }}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+              </div>
+
+              <div class="row">
+                <label class="col-sm-2 col-form-label">Primeira Interação</label>
+                <div class="col-sm-10">
+                  <mat-form-field class="example-full-width">
+                      <textarea matInput type="text" matTooltip="primeira interação" [matTooltipPosition]="'right'" placeholder="Digite os comentarios"
+                                formControlName="interacao"></textarea>
+                  </mat-form-field>
+                </div>
+              </div>
+
+              <div class="row">
+                <label class="col-sm-2 col-form-label">Data</label>
+                <div class="col-sm-10 col-md-3">
+                  <mat-form-field >
+                    <input matInput [matDatepicker]="picker" placeholder="Escolha a data" (click)="picker.open()">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                  </mat-form-field>
+                </div>
+              </div>
+
+              <div class="card-footer ">
+                <div class="btn-group ml-auto">
+                  <button mat-raised-button class="btn btn-fill btn-danger" matTooltip="Cancelar cadastro"
+                          [matTooltipPosition]="'above'" (click)="cancelar()">Cancelar</button>
+                  <button mat-raised-button type="submit" class="btn btn-fill btn-success" matTooltip="Salvar informações"
+                          [matTooltipPosition]="'above'" [disabled]="!formGroup.valid" (click)="salvar()">Salvar</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

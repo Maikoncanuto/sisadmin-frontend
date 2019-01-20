@@ -33,7 +33,7 @@ export const ROUTES: RouteInfo[] = [{
     icontype: 'domain',
     collapse: 'unidades',
     children: [
-        {path: 'listagem', title: 'Administração de unidades', ab: 'UNI'}
+        {path: 'listar-unidade', title: 'ADMIN. UNIDADES', ab: 'UNI'}
     ]
 }, {
     path: '/usuarios',
@@ -42,7 +42,7 @@ export const ROUTES: RouteInfo[] = [{
     icontype: 'group',
     collapse: 'usuarios',
     children: [
-        {path: 'listagem', title: 'Administração de usuários', ab: 'USR'}
+        {path: 'listar-usuario', title: 'ADMIN. USUÁRIOS', ab: 'USR'}
     ]
 }, {
     path: '/perfis',
@@ -51,7 +51,7 @@ export const ROUTES: RouteInfo[] = [{
     icontype: 'account_box',
     collapse: 'perfis',
     children: [
-        {path: 'listagem', title: 'Adminsitração de perfis', ab: 'PER'}
+        {path: 'listar-perfil', title: 'ADMIN. PERFIS', ab: 'PER'}
     ]
 }, {
     path: '/cursos',
@@ -60,7 +60,18 @@ export const ROUTES: RouteInfo[] = [{
     icontype: 'chrome_reader_mode',
     collapse: 'cursos',
     children: [
-        {path: 'listagem', title: 'Administração de cursos', ab: 'CRS'}
+        {path: 'listar-curso', title: 'ADMIN. CURSOS', ab: 'CRS'},
+        {path: 'agendar-aula', title: 'AGENDAMENTO DE AULAS', ab: 'CAD'}
+    ]
+}, {
+    path: '/atendimentos',
+    title: 'Atendimento',
+    type: 'sub',
+    icontype: 'perm_identity',
+    collapse: 'Atendimento',
+    children: [
+        {path: 'listar-atendimento', title: 'ADMIN. ATENDIMENTOS', ab: 'ATM'},
+        {path: 'relatorio-atendimento', title: 'REL. ATENDIMENTOS', ab: 'REL'}
     ]
 }];
 //     ,{
